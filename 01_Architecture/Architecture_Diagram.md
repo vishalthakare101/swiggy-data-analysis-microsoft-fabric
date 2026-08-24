@@ -26,8 +26,3 @@ J --> K[Interactive Dashboard]
 K --> L[Power BI Service / Fabric Workspace]
 ```
 
-Star Schema
-    ↓
-Dashboard Creation
-    ↓
-Power BI Service
