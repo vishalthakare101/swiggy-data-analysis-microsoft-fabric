@@ -26,24 +26,6 @@ J --> K[Interactive Dashboard]
 K --> L[Power BI Service / Fabric Workspace]
 ```
 
-CSV Files
-    ↓
-Microsoft Fabric Lakehouse
-    ↓
-Delta Tables (Parquet)
-    ↓
-SQL Validation
-    ↓
-Fabric Pipeline
-    ↓
-Fabric Warehouse
-    ↓
-Data Quality Validation
-    ↓
-Semantic Model
-    ↓
-Power BI Desktop
-    ↓
 Star Schema
     ↓
 Dashboard Creation
