@@ -20,19 +20,3 @@ Corrects the `order_date` column datatype issue by converting string values into
 - Data Validation
 - Data Quality Checks
 
-- # SQL*Scripts
-
-This folder contains SQL *cripts used in the Swiggy Data Ana*ysis Project.
-
-Key activities perf*rmed:
-
-- Schema creation
-- Data va*idation
-- Row count verification
--*Data quality checks
-- Date datatyp* correction
-- Conversion validatio*
-
-Database Platform:
-- Microsoft F*bric Warehouse
-- T-SQL
