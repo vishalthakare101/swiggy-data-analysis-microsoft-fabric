@@ -86,7 +86,7 @@ A*Fabric Warehouse was created to su*port analytical workloads.
 ### Sc*ema Creation
 
 ```sql
-CREATE SCHEMA*swiggy_project;
+CREATE SCHEMA swiggy_project;
 ```
 
 ### Benefits
