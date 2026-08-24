@@ -27,19 +27,19 @@ SELECT COUNT(*) AS dim_restaurant_rows
 FROM swiggy_project.dim_restaurant;
 
 SELECT COUNT(*) AS fact_orders_rows
-FROM s*iggy_project.fact_orders;
+FROM swiggy_project.fact_orders;
 
 
--- ===*==================================*===
+-- ========================================
 -- STEP*3: DATE COLUMN VALIDATION
--- =====*===========================*========
+-- ========================================
 
-SELECT TOP 20 order_date*FROM swiggy_project.dim_date;
+SELECT TOP 20 order_date FROM swiggy_project.dim_date;
 
 
---*==================================*=======
--- STEP 4: ADD NEW DATE CO*UMN
--- ===========================*==============
+-- =========================================
+-- STEP 4: ADD NEW DATE COLUMN
+-- =========================================
 
 ALTER TABLE swiggy_project.dim_date
 ADD order_date_new DATE;
@@ -70,32 +70,32 @@ TRY_CONVERT(DATE, order_date, 5);
 SELECT
     COUNT(*) AS total_rows,
     COUNT(order_d*te_new) AS converted_rows
-FROM swi*gy_project.dim_date;
+FROM swiggy_project.dim_date;
 
 
--- ========*=================================
-*- STEP 8: IDENTIFY FAILED CONVERSI*NS
--- ============================*=============
+-- =========================================
+-- STEP 8: IDENTIFY FAILED CONVERSIONS
+-- =========================================
 
 SELECT *
 FROM swigg*_project.dim_date
 WHERE order_date*new IS NULL;
 
 
--- ================*=========================
+-- =========================================
 -- STEP *: OPTIONAL CLEANUP
--- ============*=============================
+-- =========================================
 
--- *LTER TABLE swiggy_project.dim_date*-- DROP COLUMN order_date;
+-- ALTER TABLE swiggy_project.dim_date-- DROP COLUMN order_date;
 
 -- EXE* sp_rename
--- 'swiggy_project.dim_*ate.order_date_new',
--- 'order_dat*',
+-- 'swiggy_project.dim_date.order_date_new',
+-- 'order_date',
 -- 'COLUMN';
 
 
--- =============*============================
--- ST*P 10: FINAL VALIDATION
--- ========*=================================
-*SELECT TOP 20 *
-FROM swiggy_projec*.dim_date;
+-- =========================================
+-- STEP 10: FINAL VALIDATION
+-- =========================================
+SELECT TOP 20 *
+FROM swiggy_project.dim_date;
