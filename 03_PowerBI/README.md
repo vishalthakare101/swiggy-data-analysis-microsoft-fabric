@@ -62,3 +62,9 @@ Star Schema implementation:
 ## Dashboard Preview
 
 See Dashboard.png
+
+## Note
+
+The Power BI (.pbix) file is not included in this repository.
+
+The repository focuses on showcasing the Microsoft Fabric architecture, SQL transformations, semantic modeling, and dashboard outputs.
