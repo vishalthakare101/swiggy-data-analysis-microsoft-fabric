@@ -6,8 +6,6 @@ Microsoft Fabric was used to build an end-to-end analytics solution for Swiggy s
 
 The project leveraged Lakehouse, Fabric Pipelines, Warehouse, SQL Endpoint, and Semantic Models to transform raw CSV files into a business-ready Power BI dashboard.
 
----
-
 ## Architecture Flow
 
 CSV Files
@@ -44,20 +42,16 @@ Power BI Dashboard
 
 Power BI Service
 
----
-
 ## Lakehouse
 
 The Lakehouse served as the data ingestion and storage layer.
 
-### Activities Performed
+Activities Performed:
 
 - Loaded CSV files into Microsoft Fabric Lakehouse
 - Converted data into Delta Tables
 - Stored data in Parquet format
 - Validated imported data through SQL Endpoint
-
----
 
 ## SQL Validation
 
@@ -69,75 +63,67 @@ SELECT * FROM dim_date;
 SELECT COUNT(*) FROM dim_date;
 ```
 
-*alidation was performed on:
+Validation w*s performed on:
 
-- dim*date
-- dim_dish
+- dim_date
+- dim_*ish
 - dim_location
-- d*m_restaurant
+- dim_restauran*
 - fact_orders
 
----
+## Warehouse
 
-#* Warehouse
+A Fa*ric Warehouse was created to suppo*t analytical workloads.
 
-A*Fabric Warehouse was created to su*port analytical workloads.
-
-### Sc*ema Creation
+Schema Cr*ation:
 
 ```sql
-CREATE SCHEMA swiggy_project;
+CREATE SCHEMA swigg*_project;
 ```
 
-### Benefits
-*- Structured analytical storage
-- *CID compliance
-- SQL transformatio*s
-- Semantic Model*support
+Benefits:
 
----
+- Struct*red analytical storage
+- ACID comp*iance
+- SQL transformations
+- Sema*tic Model support
 
-## Fabric Pipeline
+## Fabric Pipel*ne
 
-*ipeline Name:
+Pipeline Name:
 
-**swiggy_Lakehouse_*o_Warehouse**
+swiggy_Lakehou*e_to_Warehouse
 
-The pipeline*was used to*move data from Lakehouse tables in*o Warehouse tables.
+The pipeline was u*ed to move data from Lakehouse tab*es into Warehouse tables.
 
-### Activitie*
+Activit*es:
 
 - Copy Data Activity
-- Source: L*kehouse
-- Destination: Warehouse
--*Validation before execution
-- Succ*ssful execution monitoring
+- Source* Lakehouse
+- Destination: Warehous*
+- Validation before execution
+- S*ccessful execution monitoring
 
----
-
-#* Data Quality Checks
+## *ata Quality Checks
 
 Performed:
 
-* Row count validation
-- Datatype v*lidation
+- *ow count validation
+- Datatype val*dation
 - Null value checks
-- Dat* consistency checks
+- Data *onsistency checks
 
-### Issue Res*lved
+Issue Resolved:*
+The order_date column was stored *s a string datatype.
 
-The `*rder*date` column was stored as a strin* datatype.
+The issue wa* resolved using SQL by creating a *ew DATE column and converting the *alues using TRY_CONVERT().
 
-The issue*was resolved using SQL by creating*a*new DATE column and converting the*values using `TRY_CONVERT()`.
+## Tec*nologies Used
 
----*
-## Technologies Used
-
-- Microsoft*Fabric
-- OneLake
+- Microsoft Fabric
+* OneLake
 - Lakehouse
-- War*house
-- Fabric Pipelines
-- SQL End*oint
-- Semantic Models
-````*
+- Warehouse
+-*Fabric Pipelines
+- SQL Endpoint
+- *emantic Models
